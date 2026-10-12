@@ -9,7 +9,13 @@
 #   Olá, Ana! Você é de Recife e faz 25 anos em 2026.
 #
 # TODO(human): escreva o exercício 1 aqui (4 a 6 linhas).
-
+# %% Exercico 01
+nome = input("Digite seu nome: ")
+ano_nascimento = int(input("Digite seu ano de nascimento: "))
+cidade = input("Digite sua cidade: ")
+ano_atual = 2026
+idade = ano_atual - ano_nascimento 
+print(f"Olá, {nome}! Você é de {cidade} e faz {idade} anos em 2026")
 
 
 # -----------------------------------------------------------------------------
@@ -29,7 +35,7 @@
 # Escreva seu código aqui:
 
 
-
+# %% 
 # -----------------------------------------------------------------------------
 # Exercício 4: Descubra o tipo (responda sem rodar, depois confira com print/type)
 # Qual o tipo e o valor de cada variável abaixo?
@@ -44,3 +50,5 @@ e = 3 > 2
 # c =
 # d =
 # e =
+
+# %%
