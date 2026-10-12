@@ -12,3 +12,6 @@ venv/
 # Configurações locais do editor e do Claude Code
 .vscode/
 .claude/
+
+# Recorde salvo pelo jogo da aula 14
+recorde.json
