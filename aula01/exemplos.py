@@ -1,13 +1,16 @@
 # Aula 01 - Exemplos: variáveis, tipos, print e input
 # Rode com: python aula01/exemplos.py
 
+
 # --- Criando variáveis -------------------------------------------------------
+# %% Variaveis
 nome = "Ana"
 idade = 25
 altura = 1.68
 estudante = True
 apelido = None  # ainda não tem apelido
 
+# %% teste
 print("=== Variáveis ===")
 print(nome)
 print(idade)
@@ -65,3 +68,5 @@ print(bool(0), bool(1), bool(""), bool("oi"))  # zero e texto vazio são False
 # cidade = input("Em que cidade você mora? ")
 # ano = int(input("Em que ano você nasceu? "))
 # print(f"Você mora em {cidade} e fará {2026 - ano} anos em 2026.")
+
+# %%
