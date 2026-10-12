@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.pyc
+
+# Ambiente virtual (aula 11)
+.venv/
+venv/
+
+# Segredos: chaves de API nunca vão para o GitHub
+.env
+
+# Configurações locais do editor e do Claude Code
+.vscode/
+.claude/
