@@ -62,7 +62,7 @@ assert eh_primo(17) is True
 assert eh_primo(1) is False
 assert eh_primo(15) is False
 assert contar_vogais("Python") == 1
-assert contar_vogais("Inteligência Artificial") == 10
+assert contar_vogais("Inteligência Artificial") == 11
 assert maior_da_lista([3, 9, 2]) == 9
 assert maior_da_lista([-5, -2, -8]) == -2
 assert maior_da_lista([]) is None
