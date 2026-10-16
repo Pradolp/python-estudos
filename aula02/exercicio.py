@@ -26,8 +26,13 @@ print(f"Raiz quadrada: {raiz_quadrada:.2f}")
 #   Unidade: 4 | Dezena: 3 | Centena: 8 | Milhar: 1
 # Dica: 1834 % 10 = 4 e 1834 // 10 % 10 = 3
 # Escreva seu código aqui:
-
-
+# %%
+numero = int(input("Digite um número de 0 a 9999: "))
+unidade = numero % 10
+dezena = numero // 10 % 10
+centena = numero // 100 % 10
+milhar = numero // 1000 % 10
+print(f"Unidade: {unidade} | Dezena: {dezena} | Centena: {centena} | Milhar: {milhar}") 
 
 # -----------------------------------------------------------------------------
 # Exercício 3: Analisando um nome
@@ -37,13 +42,26 @@ print(f"Raiz quadrada: {raiz_quadrada:.2f}")
 #   - o primeiro nome
 #   - se o nome contém "Silva" (True/False)
 # Escreva seu código aqui:
+#%%
+nome = "Lucas Silva do Prado"
+nome_limpo = nome.replace(" ", "")
+primeiro_nome = nome.split()[0]
 
-
+print(f"Nome em maiúsculas: {nome.upper()}")
+print(f"Quantidade de letras (sem espaços): {len(nome_limpo)}")
+print(f"Primeiro nome: {primeiro_nome}")
+print(f"Contém 'Silva': {'Silva' in nome}")
 
 # -----------------------------------------------------------------------------
 # Exercício 4: Desconto
 # Leia o preço de um produto e mostre o novo preço com 5% de desconto,
 # formatado com 2 casas decimais.
 # Escreva seu código aqui:
+#%%
+preco = float(input("Digite o preço do produto: R$ "))
+novo_preco = preco * 0.95
+print(f"Preço com desconto: R$ {novo_preco:.2f}")
 
 
+
+# %%
