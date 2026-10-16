@@ -6,8 +6,18 @@
 # Leia um número inteiro e mostre: o antecessor, o sucessor, o dobro,
 # o triplo e a raiz quadrada (com 2 casas).
 # Escreva seu código aqui:
-
-
+# %% 
+numero = int(input("Digite um número inteiro: "))
+antecessor = numero - 1
+sucessor = numero + 1
+dobro = numero * 2
+triplo = numero * 3
+raiz_quadrada = numero ** 0.5
+print(f"Antecessor: {antecessor}")
+print(f"Sucessor: {sucessor}")
+print(f"Dobro: {dobro}")
+print(f"Triplo: {triplo}")
+print(f"Raiz quadrada: {raiz_quadrada:.2f}")
 
 # -----------------------------------------------------------------------------
 # Exercício 2: Separando dígitos
