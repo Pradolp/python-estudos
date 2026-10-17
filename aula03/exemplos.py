@@ -1,7 +1,7 @@
 # Aula 03 - Exemplos: if, elif, else
 # Rode com: python aula03/exemplos.py
 # Mude os valores das variáveis e rode de novo para ver os outros caminhos.
-
+#%%
 print("=== if / else ===")
 temperatura = 31
 if temperatura > 30:

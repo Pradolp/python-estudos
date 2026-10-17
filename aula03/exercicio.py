@@ -5,8 +5,10 @@
 # Exercício 1: Par ou ímpar
 # Leia um número inteiro e diga se ele é par ou ímpar.
 # Escreva seu código aqui:
-
-
+#%%
+numero = int(input("Numero:"))
+tipo  = "par" if numero % 2 == 0 else "impar"
+print(f"Numero é: {tipo}")
 
 # -----------------------------------------------------------------------------
 # Exercício 2: Boletim
@@ -25,8 +27,12 @@
 #   OU é divisível por 400.
 # Teste: 2024 (sim), 1900 (não), 2000 (sim), 2026 (não)
 # Escreva seu código aqui:
-
-
+#%%
+ano = int(input("Ano:"))
+if ano % 400 == 0: 
+    print("Sim")
+else:
+    print("Não")
 
 # -----------------------------------------------------------------------------
 # Exercício 4: O maior de três
@@ -43,3 +49,5 @@
 # Escreva seu código aqui:
 
 
+
+# %%
