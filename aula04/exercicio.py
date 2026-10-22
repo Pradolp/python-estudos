@@ -7,8 +7,20 @@
 # digitados (sem contar o 0), a soma e a média.
 # Cuidado: se o primeiro número já for 0, não divida por zero!
 # Escreva seu código aqui:
+#%%
+num = float(input("Digite um número(0 para sair):"))
+quantidade = 0
+soma = 0
+while num != 0:
+    quantidade += 1
+    soma += num
+    num = float(input("Digite um número(0 para sair):"))
 
-
+media = soma / quantidade
+if quantidade > 0:
+    print(f"{quantidade} números | soma {soma} | média {media:.2f}")
+else:
+    print("Nenhum número digitado.")
 
 # -----------------------------------------------------------------------------
 # Exercício 2: Senha
@@ -31,9 +43,15 @@
 # Leia quantos termos o usuário quer e mostre a sequência de Fibonacci:
 #   0 1 1 2 3 5 8 13 ...  (cada termo é a soma dos dois anteriores)
 # Escreva seu código aqui:
-
-
-
+#%%
+termos = int(input("Quantos termos? "))
+anterior, atual = 0, 1
+quantidade = 0
+while quantidade < termos:
+    print(anterior, end=",")
+    anterior, atual = atual, anterior + atual
+    quantidade += 1
+print()
 # -----------------------------------------------------------------------------
 # Exercício 5: Maior e menor
 # Leia números até o usuário digitar um número negativo. Mostre o maior e o
@@ -41,3 +59,7 @@
 # Escreva seu código aqui:
 
 
+
+
+
+# %%
