@@ -15,10 +15,11 @@ for i in range(5):
     nota = float(input("Digite sua nota:"))
     notas.append(nota)
 
+media = sum(notas)/ len(notas)
 print(f"Notas: {notas}")
-print(f"Media: {sum(notas)/ len(notas)}")
+print(f"Media: {media}")
 print(f"Menor Nota: {min(notas)}, maior: {max(notas)}")
-print(f"Notas acima da média: {[nota for nota in notas if nota >=6]}")
+print(f"Notas acima da média: {[nota for nota in notas if nota >= media]}")
 
 
 # -----------------------------------------------------------------------------
@@ -26,6 +27,17 @@ print(f"Notas acima da média: {[nota for nota in notas if nota >=6]}")
 # Leia 7 números inteiros. Separe em duas listas, uma de pares e outra de
 # ímpares, e mostre as duas ordenadas.
 # Escreva seu código aqui:
+#%%
+pares = []
+impares = []
+for i in range(7):
+    num = int(input(f"Digite o {i+1} numero"))
+    if num % 2 == 0:
+        pares.append(num)
+    else:
+        impares.append(num)
+print(f"pares > {sorted(pares)}")
+print(f"impares > {sorted(impares)}")
 
 
 
