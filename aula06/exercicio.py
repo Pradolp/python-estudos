@@ -9,7 +9,16 @@
 #   - a maior e a menor nota
 #   - quantas notas ficaram acima da média
 # Escreva seu código aqui:
+#%%
+notas = []
+for i in range(5):
+    nota = float(input("Digite sua nota:"))
+    notas.append(nota)
 
+print(f"Notas: {notas}")
+print(f"Media: {sum(notas)/ len(notas)}")
+print(f"Menor Nota: {min(notas)}, maior: {max(notas)}")
+print(f"Notas acima da média: {[nota for nota in notas if nota >=6]}")
 
 
 # -----------------------------------------------------------------------------
@@ -48,3 +57,5 @@ frase = "o python é uma linguagem muito usada em inteligência artificial"
 # Escreva seu código aqui:
 
 
+
+# %%
