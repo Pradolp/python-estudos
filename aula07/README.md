@@ -52,9 +52,43 @@ for chave, valor in aluno.items():   # chave e valor juntos (o mais usado)
 
 aluno.keys()     # só as chaves
 aluno.values()   # só os valores
+len(aluno)       # quantos pares chave: valor existem
 ```
 
-## 5. Padrão "contador"
+> Não existe `enumerate` para dicionário porque a **chave já faz o papel do
+> índice**. O `.items()` é o "enumerate" do dicionário.
+
+## 5. Resumo dos métodos de dicionário
+
+Estes são os que você vai usar de verdade:
+
+| Método                  | O que faz                                              |
+|-------------------------|--------------------------------------------------------|
+| `d.get(k, padrao)`      | lê `k`; se não existir, devolve `padrao` (ou `None`)   |
+| `d.keys()`              | as chaves                                              |
+| `d.values()`            | os valores                                             |
+| `d.items()`             | os pares `(chave, valor)`                              |
+| `d.update(outro)`       | adiciona/altera vários pares de uma vez                |
+| `d.pop(k)`              | remove `k` e devolve o valor dele                      |
+| `d.setdefault(k, v)`    | se `k` não existe, cria com `v`; devolve o valor de `k`|
+| `d.copy()`              | cria uma cópia (veja o aviso abaixo)                   |
+| `d.clear()`             | esvazia o dicionário                                   |
+
+**Aviso sobre cópia:** `copia = aluno` **não copia**, só cria outro nome para o
+mesmo dicionário. Alterar um altera o outro. Para copiar de verdade, use
+`aluno.copy()`.
+
+```python
+original = {"nome": "Ana"}
+outro_nome = original
+outro_nome["nome"] = "Bia"
+print(original)   # {'nome': 'Bia'}  ← mudou também!
+```
+
+Para ver **todos** os métodos, use `help(dict)` ou `dir(dict)` no terminal. Não
+precisa decorar: você consulta quando precisar.
+
+## 6. Padrão "contador"
 
 Contar quantas vezes cada coisa aparece:
 
@@ -65,7 +99,19 @@ for palavra in ["sol", "mar", "sol"]:
 # {'sol': 2, 'mar': 1}
 ```
 
-## 6. Lista de dicionários
+O `get(palavra, 0)` devolve 0 na primeira vez que a palavra aparece, então a conta
+vira `0 + 1`. Nas próximas vezes ele pega o valor que já estava lá e soma 1.
+
+Para achar a chave com o **maior valor**, use `max` com `key`:
+
+```python
+mais_comum = max(contagem, key=contagem.get)   # 'sol'
+```
+
+Sem o `key`, o `max` compararia as chaves pela ordem alfabética. Com
+`key=contagem.get`, ele compara pelos valores (as contagens).
+
+## 7. Lista de dicionários
 
 É o formato de "tabela" que você vai ver o tempo todo (resposta de API, linhas de
 banco de dados, histórico de chat):
@@ -77,9 +123,38 @@ alunos = [
 ]
 for a in alunos:
     print(a["nome"], a["nota"])
+
+media = sum(a["nota"] for a in alunos) / len(alunos)   # média das notas
 ```
 
-## 7. Tuplas: listas que não mudam
+Como é uma **lista**, você adiciona um item novo com `append`:
+
+```python
+alunos.append({"nome": "Carla", "nota": 7.8})
+```
+
+## 8. Dicionário com lista dentro
+
+O valor de uma chave pode ser uma lista. Aí você usa os **métodos de lista** nesse
+valor:
+
+```python
+turma = {"professor": "Marcos", "alunos": ["Ana", "Bruno"]}
+
+turma["alunos"].append("Diego")   # ["Ana", "Bruno", "Diego"]
+len(turma["alunos"])              # 3
+```
+
+Leia em duas etapas: `turma["alunos"]` devolve a lista, e o `.append(...)` age
+**nessa lista**. O `append` não é método de dicionário, é de lista.
+
+Cuidado para não trocar por uma atribuição:
+
+```python
+turma["alunos"] = "Diego"   # substitui a lista inteira pela string "Diego"!
+```
+
+## 9. Tuplas: listas que não mudam
 
 ```python
 ponto = (3, 4)
@@ -96,7 +171,7 @@ x, y = ponto              # x = 3, y = 4
 a, b = b, a               # troca valores (a direita é uma tupla)
 ```
 
-## 8. Conjuntos (set): sem repetição e sem ordem
+## 10. Conjuntos (set): sem repetição e sem ordem
 
 ```python
 numeros = {1, 2, 2, 3}       # {1, 2, 3}
