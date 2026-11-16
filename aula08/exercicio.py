@@ -52,6 +52,40 @@ def formatar_moeda(valor, simbolo="R$"):
 
 
 # -----------------------------------------------------------------------------
+# Exercício 7 (desafio de entrevista): inverter_arvore(no)
+# Numa árvore binária, cada "nó" tem um valor e até dois filhos: um à esquerda
+# ("esq") e um à direita ("dir"). Aqui cada nó é um dicionário. Quando não há
+# filho, o valor é None. A função criar_no, logo abaixo, já está pronta: ela só
+# monta esse dicionário para você.
+#
+# Inverter a árvore é trocar esquerda e direita em TODOS os nós (como um
+# espelho). A função deve inverter a árvore e devolver o nó que recebeu.
+#
+#          4                         4
+#        /   \                     /   \
+#       2     7       vira        7     2
+#      / \   / \                 / \   / \
+#     1   3 6   9               9   6 3   1
+#
+# Recursão: uma função pode chamar a si mesma. Repare que o filho esquerdo de
+# um nó também é uma árvore, só que menor. O direito também. Então, para
+# inverter uma árvore:
+#   1. inverta a árvore da esquerda (chamando inverter_arvore nela)
+#   2. inverta a árvore da direita (do mesmo jeito)
+#   3. troque as duas de lugar: a, b = b, a
+# Toda recursão precisa de um ponto de parada, o "caso base". Sem ele, a função
+# chama a si mesma para sempre. Aqui: se o nó for None, não há o que inverter.
+#
+# É o problema 226 do LeetCode ("Invert Binary Tree").
+def criar_no(valor, esquerda=None, direita=None):
+    return {"valor": valor, "esq": esquerda, "dir": direita}
+
+
+def inverter_arvore(no):
+    pass
+
+
+# -----------------------------------------------------------------------------
 # Testes (não mexa daqui para baixo)
 assert area_retangulo(3, 4) == 12
 assert area_retangulo(2.5, 2) == 5
@@ -68,4 +102,13 @@ assert maior_da_lista([-5, -2, -8]) == -2
 assert maior_da_lista([]) is None
 assert formatar_moeda(5) == "R$ 5.00"
 assert formatar_moeda(3.14159, "US$") == "US$ 3.14"
+arvore = criar_no(4,
+                  criar_no(2, criar_no(1), criar_no(3)),
+                  criar_no(7, criar_no(6), criar_no(9)))
+espelho = criar_no(4,
+                   criar_no(7, criar_no(9), criar_no(6)),
+                   criar_no(2, criar_no(3), criar_no(1)))
+assert inverter_arvore(arvore) == espelho
+assert inverter_arvore(criar_no(5)) == criar_no(5)
+assert inverter_arvore(None) is None
 print("Todos os testes passaram!")
