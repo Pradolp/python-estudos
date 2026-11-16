@@ -11,38 +11,62 @@
 # Exercício 1: area_retangulo(largura, altura)
 # Devolve a área do retângulo.
 def area_retangulo(largura, altura):
-    pass  # apague o pass e escreva seu código
+    return largura * altura
 
 
 # -----------------------------------------------------------------------------
 # Exercício 2: fatorial(n)
 # Devolve n! (fatorial de 0 é 1).
+
 def fatorial(n):
-    pass
+    result = 1
+    for i in range(2, n+1):
+        result *= i
+    return result
 
 
 # -----------------------------------------------------------------------------
 # Exercício 3: eh_primo(n)
 # Devolve True se n for primo e False se não for.
-def eh_primo(n):
-    pass
+#%%
+def eh_primo(n) -> bool:
+    if n < 2:
+        return False
 
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+    
+    return True
+print(eh_primo(49))
+#%%
 
 # -----------------------------------------------------------------------------
 # Exercício 4: contar_vogais(texto)
 # Devolve quantas vogais (a, e, i, o, u, com ou sem acento) o texto tem.
 # Maiúsculas também contam.
 def contar_vogais(texto):
-    pass
-
+    count = 0
+    for letras in texto.lower():
+        if letras in "aeiouáéíóúâêôãõà":
+            count += 1
+    return count
 
 # -----------------------------------------------------------------------------
 # Exercício 5: maior_da_lista(numeros)
 # Devolve o maior número da lista SEM usar max().
 # Se a lista estiver vazia, devolve None.
+#%%
 def maior_da_lista(numeros):
-    pass
-
+    if not numeros:
+        return None
+    maior = numeros[0]
+    for numero in numeros:
+        if numero > maior:
+            maior = numero
+    return maior
+print(maior_da_lista([2,4,5]))
+#%%
 
 # -----------------------------------------------------------------------------
 # Exercício 6: formatar_moeda(valor, simbolo="R$")
